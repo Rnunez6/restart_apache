@@ -3,6 +3,20 @@
 CONFIG="$1"
 COMMAND="$2"
 
+
+
+File=VERSION.txt
+
+if [ -f "$File" ] 
+then
+	tput bold; tput setaf 2; echo "$File exitsts."
+else 
+	tput setaf 1; echo "No file here is a list of files."
+                   
+    tput bold; tput setaf 2; ls
+    exit 1
+fi
+
 if [ $# -ne 2 ]
 then
     echo "ERROR: $0 requires two paramters {virtual-host} {restart|reload}"
