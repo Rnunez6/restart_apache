@@ -5,13 +5,15 @@ COMMAND="$2"
 
 
 
-File=VERSION.txt
+File=loop.sh
+
+
 
 if [ -f "$File" ] 
 then
 	tput bold; tput setaf 2; echo "$File exitsts."
 else 
-	tput setaf 1; echo "No file here is a list of files."
+	tput setaf 1; echo "No file with the name $File can be found here is a list of files."
                    
     tput bold; tput setaf 2; ls
     exit 1
