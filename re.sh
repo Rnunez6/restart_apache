@@ -4,20 +4,33 @@ CONFIG="$1"
 COMMAND="$2"
 
 
-
-File=loop.sh
+File=README.md
 
 
 
 if [ -f "$File" ] 
 then
 	tput bold; tput setaf 2; echo "$File exitsts."
+    exit 1
 else 
 	tput setaf 1; echo "No file with the name $File can be found here is a list of files."
                    
     tput bold; tput setaf 2; ls
     exit 1
 fi
+
+#this does work just need to uncomment it
+#read -p "Please enter the File you are looking for : " File 
+#if [ -f "$File" ] 
+#then
+#	tput bold; tput setaf 2; echo "$File exitsts."
+#   exit 1
+#else 
+#	tput setaf 1; echo "No file with the name $File can be found here is a list of files."
+                   
+#    tput bold; tput setaf 2; ls
+#   exit 1    
+#fi
 
 if [ $# -ne 2 ]
 then
