@@ -19,7 +19,8 @@ else
     exit 1
 fi
 
-#this does work just need to uncomment it
+#these does work just need to uncomment them
+
 #read -p "Please enter the File you are looking for : " File 
 #if [ -f "$File" ] 
 #then
@@ -31,6 +32,30 @@ fi
 #    tput bold; tput setaf 2; ls
 #   exit 1    
 #fi
+
+#GoAgain=1
+#while [ $GoAgain -ne 2 ]
+#do 
+#    read -p "Please enter the File you are looking for : " File 
+#    if [ -f "$File" ] 
+#        then
+#    	tput bold; tput setaf 2; echo "$File exitsts."
+#          exit 1
+#    else 
+#        tput setaf 1; echo "No file with the name $File can be found here is a list of files."
+#        tput bold; tput setaf 2; ls
+    
+#    read -p "Do you want to try again? (y/n) " again 
+#       if [[ "$again" =~ ^([yY])$ ]]
+#            then
+#                GoAgain=1
+#            else 
+#                exit 1
+#        fi
+
+    fi
+done
+
 
 if [ $# -ne 2 ]
 then
